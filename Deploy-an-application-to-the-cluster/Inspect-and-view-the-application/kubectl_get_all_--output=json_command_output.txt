@@ -1,0 +1,567 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "v1",
+            "kind": "Pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-07T05:31:39Z",
+                "generateName": "hello-server-595ff76cbd-",
+                "generation": 1,
+                "labels": {
+                    "app": "hello-server",
+                    "pod-template-hash": "595ff76cbd",
+                    "topology.kubernetes.io/region": "asia-south1",
+                    "topology.kubernetes.io/zone": "asia-south1-b"
+                },
+                "name": "hello-server-595ff76cbd-gchbw",
+                "namespace": "default",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "blockOwnerDeletion": true,
+                        "controller": true,
+                        "kind": "ReplicaSet",
+                        "name": "hello-server-595ff76cbd",
+                        "uid": "fe379bed-ef3c-4205-9df3-f9942afd24d6"
+                    }
+                ],
+                "resourceVersion": "1791351161591167013",
+                "uid": "424fefee-2c1d-4e9d-98e2-ae8bdf6b1cea"
+            },
+            "spec": {
+                "containers": [
+                    {
+                        "image": "us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0",
+                        "imagePullPolicy": "IfNotPresent",
+                        "name": "hello-app",
+                        "resources": {
+                            "limits": {
+                                "ephemeral-storage": "1Gi"
+                            },
+                            "requests": {
+                                "cpu": "500m",
+                                "ephemeral-storage": "1Gi",
+                                "memory": "2Gi"
+                            }
+                        },
+                        "securityContext": {
+                            "capabilities": {
+                                "drop": [
+                                    "NET_RAW"
+                                ]
+                            }
+                        },
+                        "terminationMessagePath": "/dev/termination-log",
+                        "terminationMessagePolicy": "File",
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                "name": "kube-api-access-cbgb5",
+                                "readOnly": true
+                            }
+                        ]
+                    }
+                ],
+                "dnsPolicy": "ClusterFirst",
+                "enableServiceLinks": true,
+                "nodeName": "gk3-hello-cluster-pool-1-6930e993-zzcn",
+                "preemptionPolicy": "PreemptLowerPriority",
+                "priority": 0,
+                "restartPolicy": "Always",
+                "schedulerName": "gke.io/optimize-utilization-scheduler",
+                "securityContext": {
+                    "seccompProfile": {
+                        "type": "RuntimeDefault"
+                    }
+                },
+                "serviceAccount": "default",
+                "serviceAccountName": "default",
+                "terminationGracePeriodSeconds": 30,
+                "tolerations": [
+                    {
+                        "effect": "NoSchedule",
+                        "key": "kubernetes.io/arch",
+                        "operator": "Equal",
+                        "value": "amd64"
+                    },
+                    {
+                        "effect": "NoExecute",
+                        "key": "node.kubernetes.io/not-ready",
+                        "operator": "Exists",
+                        "tolerationSeconds": 300
+                    },
+                    {
+                        "effect": "NoExecute",
+                        "key": "node.kubernetes.io/unreachable",
+                        "operator": "Exists",
+                        "tolerationSeconds": 300
+                    }
+                ],
+                "volumes": [
+                    {
+                        "name": "kube-api-access-cbgb5",
+                        "projected": {
+                            "defaultMode": 420,
+                            "sources": [
+                                {
+                                    "serviceAccountToken": {
+                                        "expirationSeconds": 3607,
+                                        "path": "token"
+                                    }
+                                },
+                                {
+                                    "configMap": {
+                                        "items": [
+                                            {
+                                                "key": "ca.crt",
+                                                "path": "ca.crt"
+                                            }
+                                        ],
+                                        "name": "kube-root-ca.crt"
+                                    }
+                                },
+                                {
+                                    "downwardAPI": {
+                                        "items": [
+                                            {
+                                                "fieldRef": {
+                                                    "apiVersion": "v1",
+                                                    "fieldPath": "metadata.namespace"
+                                                },
+                                                "path": "namespace"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "status": {
+                "conditions": [
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-07T05:32:41Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "PodReadyToStartContainers"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-07T05:32:24Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "Initialized"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-07T05:32:41Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "Ready"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-07T05:32:41Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "ContainersReady"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-07T05:32:24Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "PodScheduled"
+                    }
+                ],
+                "containerStatuses": [
+                    {
+                        "allocatedResources": {
+                            "cpu": "500m",
+                            "ephemeral-storage": "1Gi",
+                            "memory": "2Gi"
+                        },
+                        "containerID": "containerd://4a5a6d27734043319a0d5be6dc84d34a2dcad6c64a6bd1ccea74c740e3ff9b74",
+                        "image": "us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0",
+                        "imageID": "us-docker.pkg.dev/google-samples/containers/gke/hello-app@sha256:649188051906c9df7f87fb2ef04a21acbdb009c0877fa67b3132b83230411f6e",
+                        "lastState": {},
+                        "name": "hello-app",
+                        "ready": true,
+                        "resources": {
+                            "limits": {
+                                "ephemeral-storage": "1Gi"
+                            },
+                            "requests": {
+                                "cpu": "500m",
+                                "ephemeral-storage": "1Gi",
+                                "memory": "2Gi"
+                            }
+                        },
+                        "restartCount": 0,
+                        "started": true,
+                        "state": {
+                            "running": {
+                                "startedAt": "2026-10-07T05:32:40Z"
+                            }
+                        },
+                        "user": {
+                            "linux": {
+                                "gid": 65532,
+                                "supplementalGroups": [
+                                    65532
+                                ],
+                                "uid": 65532
+                            }
+                        },
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                "name": "kube-api-access-cbgb5",
+                                "readOnly": true,
+                                "recursiveReadOnly": "Disabled"
+                            }
+                        ]
+                    }
+                ],
+                "hostIP": "10.160.0.4",
+                "hostIPs": [
+                    {
+                        "ip": "10.160.0.4"
+                    }
+                ],
+                "observedGeneration": 1,
+                "phase": "Running",
+                "podIP": "10.79.0.3",
+                "podIPs": [
+                    {
+                        "ip": "10.79.0.3"
+                    }
+                ],
+                "qosClass": "Burstable",
+                "startTime": "2026-10-07T05:32:24Z"
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "annotations": {
+                    "cloud.google.com/neg": "{\"ingress\":true}",
+                    "networking.gke.io/target-pool": "ac587dd60377e45cc824785a7b89092d"
+                },
+                "creationTimestamp": "2026-10-07T05:37:03Z",
+                "finalizers": [
+                    "gke.networking.io/l4-netlb-v1",
+                    "service.kubernetes.io/load-balancer-cleanup"
+                ],
+                "labels": {
+                    "app": "hello-server"
+                },
+                "name": "hello-server",
+                "namespace": "default",
+                "resourceVersion": "1791351484980015018",
+                "uid": "c587dd60-377e-45cc-8247-85a7b89092df"
+            },
+            "spec": {
+                "allocateLoadBalancerNodePorts": true,
+                "clusterIP": "34.118.234.79",
+                "clusterIPs": [
+                    "34.118.234.79"
+                ],
+                "externalTrafficPolicy": "Cluster",
+                "internalTrafficPolicy": "Cluster",
+                "ipFamilies": [
+                    "IPv4"
+                ],
+                "ipFamilyPolicy": "SingleStack",
+                "ports": [
+                    {
+                        "nodePort": 30654,
+                        "port": 80,
+                        "protocol": "TCP",
+                        "targetPort": 8080
+                    }
+                ],
+                "selector": {
+                    "app": "hello-server"
+                },
+                "sessionAffinity": "None",
+                "type": "LoadBalancer"
+            },
+            "status": {
+                "loadBalancer": {
+                    "ingress": [
+                        {
+                            "ip": "34.93.158.93",
+                            "ipMode": "VIP"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "creationTimestamp": "2026-10-07T05:10:31Z",
+                "labels": {
+                    "component": "apiserver",
+                    "provider": "kubernetes"
+                },
+                "name": "kubernetes",
+                "namespace": "default",
+                "resourceVersion": "1791349831474575006",
+                "uid": "621c1113-f153-46f9-abfe-b85b27dcbd30"
+            },
+            "spec": {
+                "clusterIP": "34.118.224.1",
+                "clusterIPs": [
+                    "34.118.224.1"
+                ],
+                "internalTrafficPolicy": "Cluster",
+                "ipFamilies": [
+                    "IPv4"
+                ],
+                "ipFamilyPolicy": "SingleStack",
+                "ports": [
+                    {
+                        "name": "https",
+                        "port": 443,
+                        "protocol": "TCP",
+                        "targetPort": 443
+                    }
+                ],
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+                "annotations": {
+                    "autopilot.gke.io/resource-adjustment": "{\"input\":{\"containers\":[{\"name\":\"hello-app\"}]},\"output\":{\"containers\":[{\"limits\":{\"ephemeral-storage\":\"1Gi\"},\"requests\":{\"cpu\":\"500m\",\"ephemeral-storage\":\"1Gi\",\"memory\":\"2Gi\"},\"name\":\"hello-app\"}]},\"computeClassAtAdmission\":\"Default\",\"modified\":true}",
+                    "autopilot.gke.io/warden-version": "35.26.6-gke.0",
+                    "deployment.kubernetes.io/revision": "1"
+                },
+                "creationTimestamp": "2026-10-07T05:31:39Z",
+                "generation": 1,
+                "labels": {
+                    "app": "hello-server"
+                },
+                "name": "hello-server",
+                "namespace": "default",
+                "resourceVersion": "1791351161665151001",
+                "uid": "8eba1a45-c7c2-4a88-87b2-a4687b99ae50"
+            },
+            "spec": {
+                "progressDeadlineSeconds": 600,
+                "replicas": 1,
+                "revisionHistoryLimit": 10,
+                "selector": {
+                    "matchLabels": {
+                        "app": "hello-server"
+                    }
+                },
+                "strategy": {
+                    "rollingUpdate": {
+                        "maxSurge": "25%",
+                        "maxUnavailable": "25%"
+                    },
+                    "type": "RollingUpdate"
+                },
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "app": "hello-server"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "image": "us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0",
+                                "imagePullPolicy": "IfNotPresent",
+                                "name": "hello-app",
+                                "resources": {
+                                    "limits": {
+                                        "ephemeral-storage": "1Gi"
+                                    },
+                                    "requests": {
+                                        "cpu": "500m",
+                                        "ephemeral-storage": "1Gi",
+                                        "memory": "2Gi"
+                                    }
+                                },
+                                "securityContext": {
+                                    "capabilities": {
+                                        "drop": [
+                                            "NET_RAW"
+                                        ]
+                                    }
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File"
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {
+                            "seccompProfile": {
+                                "type": "RuntimeDefault"
+                            }
+                        },
+                        "terminationGracePeriodSeconds": 30,
+                        "tolerations": [
+                            {
+                                "effect": "NoSchedule",
+                                "key": "kubernetes.io/arch",
+                                "operator": "Equal",
+                                "value": "amd64"
+                            }
+                        ]
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 1,
+                "conditions": [
+                    {
+                        "lastTransitionTime": "2026-10-07T05:32:41Z",
+                        "lastUpdateTime": "2026-10-07T05:32:41Z",
+                        "message": "Deployment has minimum availability.",
+                        "reason": "MinimumReplicasAvailable",
+                        "status": "True",
+                        "type": "Available"
+                    },
+                    {
+                        "lastTransitionTime": "2026-10-07T05:31:39Z",
+                        "lastUpdateTime": "2026-10-07T05:32:41Z",
+                        "message": "ReplicaSet \"hello-server-595ff76cbd\" has successfully progressed.",
+                        "reason": "NewReplicaSetAvailable",
+                        "status": "True",
+                        "type": "Progressing"
+                    }
+                ],
+                "observedGeneration": 1,
+                "readyReplicas": 1,
+                "replicas": 1,
+                "terminatingReplicas": 0,
+                "updatedReplicas": 1
+            }
+        },
+        {
+            "apiVersion": "apps/v1",
+            "kind": "ReplicaSet",
+            "metadata": {
+                "annotations": {
+                    "autopilot.gke.io/resource-adjustment": "{\"input\":{\"containers\":[{\"name\":\"hello-app\"}]},\"output\":{\"containers\":[{\"limits\":{\"ephemeral-storage\":\"1Gi\"},\"requests\":{\"cpu\":\"500m\",\"ephemeral-storage\":\"1Gi\",\"memory\":\"2Gi\"},\"name\":\"hello-app\"}]},\"computeClassAtAdmission\":\"Default\",\"modified\":true}",
+                    "autopilot.gke.io/warden-version": "35.26.6-gke.0",
+                    "deployment.kubernetes.io/desired-replicas": "1",
+                    "deployment.kubernetes.io/max-replicas": "2",
+                    "deployment.kubernetes.io/revision": "1"
+                },
+                "creationTimestamp": "2026-10-07T05:31:39Z",
+                "generation": 1,
+                "labels": {
+                    "app": "hello-server",
+                    "pod-template-hash": "595ff76cbd"
+                },
+                "name": "hello-server-595ff76cbd",
+                "namespace": "default",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "blockOwnerDeletion": true,
+                        "controller": true,
+                        "kind": "Deployment",
+                        "name": "hello-server",
+                        "uid": "8eba1a45-c7c2-4a88-87b2-a4687b99ae50"
+                    }
+                ],
+                "resourceVersion": "1791351161625183001",
+                "uid": "fe379bed-ef3c-4205-9df3-f9942afd24d6"
+            },
+            "spec": {
+                "replicas": 1,
+                "selector": {
+                    "matchLabels": {
+                        "app": "hello-server",
+                        "pod-template-hash": "595ff76cbd"
+                    }
+                },
+                "template": {
+                    "metadata": {
+                        "labels": {
+                            "app": "hello-server",
+                            "pod-template-hash": "595ff76cbd"
+                        }
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "image": "us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0",
+                                "imagePullPolicy": "IfNotPresent",
+                                "name": "hello-app",
+                                "resources": {
+                                    "limits": {
+                                        "ephemeral-storage": "1Gi"
+                                    },
+                                    "requests": {
+                                        "cpu": "500m",
+                                        "ephemeral-storage": "1Gi",
+                                        "memory": "2Gi"
+                                    }
+                                },
+                                "securityContext": {
+                                    "capabilities": {
+                                        "drop": [
+                                            "NET_RAW"
+                                        ]
+                                    }
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File"
+                            }
+                        ],
+                        "dnsPolicy": "ClusterFirst",
+                        "restartPolicy": "Always",
+                        "schedulerName": "default-scheduler",
+                        "securityContext": {
+                            "seccompProfile": {
+                                "type": "RuntimeDefault"
+                            }
+                        },
+                        "terminationGracePeriodSeconds": 30,
+                        "tolerations": [
+                            {
+                                "effect": "NoSchedule",
+                                "key": "kubernetes.io/arch",
+                                "operator": "Equal",
+                                "value": "amd64"
+                            }
+                        ]
+                    }
+                }
+            },
+            "status": {
+                "availableReplicas": 1,
+                "fullyLabeledReplicas": 1,
+                "observedGeneration": 1,
+                "readyReplicas": 1,
+                "replicas": 1,
+                "terminatingReplicas": 0
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

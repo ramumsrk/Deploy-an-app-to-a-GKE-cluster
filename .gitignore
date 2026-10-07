@@ -1,0 +1,6 @@
+# ignore following files anywhere in the worktree
+**/gcloud_auth_list_command_output.txt
+**/gcloud_auth_login_command_output.txt
+**/gcloud_config_set_account_command_output.txt
+**/gcloud_config_set_compute_by_zone_command_output.txt
+**/gcloud_config_set_project_command_output.txt

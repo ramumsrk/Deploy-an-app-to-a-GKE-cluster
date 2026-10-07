@@ -1,0 +1,12 @@
+time gcloud container clusters delete hello-cluster --location=asia-south1
+The following clusters will be deleted.
+ - [hello-cluster] in [asia-south1]
+
+Do you want to continue (Y/n)?  Y
+
+Deleting cluster hello-cluster...done.                   
+Deleted [https://container.googleapis.com/v1/projects/cluster-gke-a-to-app-an-deploy/zones/asia-south1/clusters/hello-cluster].
+
+real	4m31.303s
+user	0m1.166s
+sys	    0m0.159s

@@ -1,0 +1,9 @@
+curl --location --silent --show-error --url 'http://34.93.158.93'
+Hello, world!
+Version: 1.0.0
+Hostname: hello-server-595ff76cbd-gchbw
+
+curl --location --silent --show-error --url 'http://34.93.158.93'
+Hello, world!
+Version: 1.0.0
+Hostname: hello-server-595ff76cbd-gchbw

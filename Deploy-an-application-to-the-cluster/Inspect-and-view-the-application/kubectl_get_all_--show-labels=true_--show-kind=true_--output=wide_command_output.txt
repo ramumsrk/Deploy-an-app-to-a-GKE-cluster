@@ -1,0 +1,12 @@
+NAME                                READY   STATUS    RESTARTS   AGE   IP          NODE                                     NOMINATED NODE   READINESS GATES   LABELS
+pod/hello-server-595ff76cbd-gchbw   1/1     Running   0          11m   10.79.0.3   gk3-hello-cluster-pool-1-6930e993-zzcn   <none>           <none>            app=hello-server,pod-template-hash=595ff76cbd,topology.kubernetes.io/region=asia-south1,topology.kubernetes.io/zone=asia-south1-b
+
+NAME                   TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)        AGE     SELECTOR           LABELS
+service/hello-server   LoadBalancer   34.118.234.79   34.93.158.93   80:30654/TCP   6m17s   app=hello-server   app=hello-server
+service/kubernetes     ClusterIP      34.118.224.1    <none>         443/TCP        32m     <none>             component=apiserver,provider=kubernetes
+
+NAME                           READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES                                                          SELECTOR           LABELS
+deployment.apps/hello-server   1/1     1            1           11m   hello-app    us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0   app=hello-server   app=hello-server
+
+NAME                                      DESIRED   CURRENT   READY   AGE   CONTAINERS   IMAGES                                                          SELECTOR                                        LABELS
+replicaset.apps/hello-server-595ff76cbd   1         1         1       11m   hello-app    us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0   app=hello-server,pod-template-hash=595ff76cbd   app=hello-server,pod-template-hash=595ff76cbd

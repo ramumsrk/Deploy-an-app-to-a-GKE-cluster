@@ -1,0 +1,20 @@
+gcloud container clusters create-auto hello-cluster
+API [container.googleapis.com] not enabled on project 
+[cluster-gke-a-to-app-an-deploy]. Would you like to enable
+ and retry (this will take a few minutes)? (y/N)?  y
+
+Enabling service [container.googleapis.com] on project [cluster-gke-a-to-app-an-deploy]...
+Operation "operations/acf.p2-483168570963-256c00c9-60c3-4e5f-88ab-e0705077bdac" finished successfully.
+ERROR: (gcloud.container.clusters.create-auto) ResponseError: code=403, message=Permission denied on 'locations/ap-south1-a' (or it may not exist). This command is authenticated as ramu.msrk.asus.x00td@gmail.com which is the active account specified by the [core/account] property.
+
+gcloud container clusters create-auto hello-cluster --location=asia-south1
+Creating cluster hello-cluster in asia-south1... Cluster 
+is being deployed...⠏                                    
+Creating cluster hello-cluster in asia-south1... Cluster 
+is being health-checked (Kubernetes Control Plane is heal
+thy)...done.                                             
+Created [https://container.googleapis.com/v1/projects/cluster-gke-a-to-app-an-deploy/zones/asia-south1/clusters/hello-cluster].
+To inspect the contents of your cluster, go to: https://console.cloud.google.com/kubernetes/workload_/gcloud/asia-south1/hello-cluster?project=cluster-gke-a-to-app-an-deploy
+kubeconfig entry generated for hello-cluster.
+NAME           LOCATION     MASTER_VERSION      MASTER_IP      MACHINE_TYPE   NODE_VERSION        NUM_NODES  STATUS   STACK_TYPE
+hello-cluster  asia-south1  1.35.8-gke.1225000  8.234.127.173  ek-standard-8  1.35.8-gke.1225000  3          RUNNING  IPV4

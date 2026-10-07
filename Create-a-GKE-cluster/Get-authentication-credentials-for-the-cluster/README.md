@@ -1,0 +1,1 @@
+# Get authentication credentials for the cluster

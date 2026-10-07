@@ -1,0 +1,2 @@
+kubectl expose deployment hello-server --type LoadBalancer --port 80 --target-port 8080
+service/hello-server exposed

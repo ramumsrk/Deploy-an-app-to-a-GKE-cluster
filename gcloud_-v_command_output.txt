@@ -1,0 +1,11 @@
+Google Cloud SDK 587.0.0
+alpha 2026.09.25
+beta 2026.09.25
+bq 2.1.39
+bundled-python3-unix 3.14.7
+core 2026.09.25
+gcloud-crc32c 1.0.0
+gke-gcloud-auth-plugin 0.5.19
+gsutil 5.37
+kubectl 1.35.8
+preview 2026.09.25
